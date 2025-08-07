@@ -6,7 +6,7 @@ from app import app
 
 def load_initial_data():
     with app.app_context():
-        # Limpia tablas si quieres (opcional)
+        # Limpia tablas 
         Planet.query.delete()
         Person.query.delete()
         User.query.delete()
@@ -28,7 +28,7 @@ def load_initial_data():
         ]
         db.session.bulk_save_objects(people)
 
-        # Crea usuarios (opcional)
+        # Crea usuarios 
         user = User(email="admin@example.com", is_active=True)
         db.session.add(user)
 
